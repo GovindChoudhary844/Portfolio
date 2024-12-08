@@ -22,6 +22,12 @@ const CustomNavbar = () => {
           transform: scale(1.1);
           color: var(--third-color);
         }
+        
+        .navlink-button:focus {
+          background-color: var(--secondary-color);
+          transform: scale(1.1);
+          color: #088F8F;
+        }
 
         .sticky-navbar {
           position: -webkit-sticky; 

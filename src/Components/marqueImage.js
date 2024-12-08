@@ -8,15 +8,17 @@ function MarqueImage() {
     "Images/Skills-Logo/4.jpg",
     "Images/Skills-Logo/5.jpg",
     "Images/Skills-Logo/6.jpg",
+    "Images/Skills-Logo/7.jpg",
   ];
 
   const row2 = [
+    "Images/Skills-Logo/1.jpg",
+    "Images/Skills-Logo/2.jpg",
+    "Images/Skills-Logo/3.jpg",
+    "Images/Skills-Logo/4.jpg",
+    "Images/Skills-Logo/5.jpg",
+    "Images/Skills-Logo/6.jpg",
     "Images/Skills-Logo/7.jpg",
-    "Images/Skills-Logo/8.jpg",
-    "Images/Skills-Logo/9.jpg",
-    "Images/Skills-Logo/10.jpg",
-    "Images/Skills-Logo/11.jpg",
-    "Images/Skills-Logo/12.jpg",
   ];
 
   const common = `

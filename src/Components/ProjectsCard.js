@@ -31,12 +31,37 @@ function ProjectsCard({ project }) {
             border: 1px solid #017d7d;
           }
 
-          .image-size {
-            transition: transform 0.5s;
+          .image-container {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
           }
 
-          .image-size:hover {
-            transform: scale(1.1); 
+          .image-size {
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+
+          .image-container:hover .image-size {
+            transform: scale(1.1);
+            opacity: 0.5;
+          }
+
+          .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+          }
+
+          .image-container:hover .play-icon {
+            opacity: 1;
           }
         `}
       </style>
@@ -44,18 +69,18 @@ function ProjectsCard({ project }) {
         style={{
           backgroundColor: "var(--Fourth-color)",
           color: "var(--third-color)",
-          overflow: "hidden",
         }}
       >
-        <img
-          src={process.env.PUBLIC_URL + "/" + project.imagecharacter}
-          alt={project.name}
-          className={`image-size ${imageLoaded ? "" : "blur"}`}
-          loading="lazy"
-          onLoad={handleImageLoad}
-          onClick={redirectToProjectDetails}
-          style={{ cursor: "pointer" }}
-        />
+        <div className="image-container" onClick={redirectToProjectDetails}>
+          <img
+            src={process.env.PUBLIC_URL + "/" + project.imagecharacter}
+            alt={project.name}
+            className={`image-size ${imageLoaded ? "" : "blur"}`}
+            loading="lazy"
+            onLoad={handleImageLoad}
+          />
+          <i className="fa fa-play-circle play-icon" aria-hidden="true"></i>
+        </div>
         <Card.Body style={{ textAlign: "center" }}>
           <Card.Title
             className="resp-h5"

@@ -3,7 +3,7 @@ import { Col, Row, Button } from "react-bootstrap";
 import ProjectsCard from "../Components/ProjectsCard";
 import Copyright from "../Components/copyright";
 import "../App.css";
-import projectDesktopAPI from "../Components/api/projectDesktopAPI";
+import projectsAPI from "../Components/api/projectsAPI";
 
 const Works = () => {
   return (
@@ -22,7 +22,7 @@ const Works = () => {
         <h1 className="page-title resp-h1 text-center">Works</h1>
 
         <Row className="mt-3 mt-md-5">
-          {projectDesktopAPI.map((project) => (
+          {projectsAPI.map((project) => (
             <Col key={project.id} sm={12} md={6} lg={4} xl={4} className="p-2">
               <ProjectsCard project={project} />
             </Col>

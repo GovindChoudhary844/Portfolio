@@ -4,7 +4,6 @@ import { Col, Row, Button } from "react-bootstrap";
 import Skills from "../Components/Skills";
 import ProjectOdd from "../Components/Projects/ProjectOdd";
 import ProjectEven from "../Components/Projects/ProjectEven";
-import Courses from "../Components/Courses";
 import Education from "../Components/Education";
 import Copyright from "../Components/copyright";
 import "../App.css";
@@ -40,12 +39,15 @@ const Resume = () => {
         <h2 className="mt-5 resp-h2">Profile</h2>
         <hr />
         <p className="resp-text">
-          Dedicated web developer equipped with a strong grasp of HTML, CSS, and
-          Bootstrap. Skilled in implementing responsive design using
-          React-Bootstrap, with fundamental proficiency in JavaScript, React.js,
-          Python, Django, and MySQL. Eager to apply technical knowledge and
-          contribute to the dynamic evolution of innovative and user-friendly
-          web solutions.
+          Enthusiastic Unity beginner exploring the exciting world of game
+          development with C#. Currently focused on mastering gameplay
+          mechanics, sound design, and creating intelligent enemy AI to deliver
+          immersive gaming experiences. Passionate about learning new techniques
+          and tools, constantly experimenting with creative ideas to enhance my
+          skills. Driven by a love for gaming and a strong desire to create
+          engaging and interactive games that captivate players. Eager to grow
+          as a developer and contribute to innovative projects in the gaming
+          industry.
         </p>
 
         <Col>
@@ -58,19 +60,6 @@ const Resume = () => {
           <hr />
           <ProjectOdd index={0} />
           <hr className="hr-small" />
-          <ProjectEven index={1} />
-          <hr className="hr-small" />
-          <ProjectOdd index={2} />
-          <h2 className="resp-h2 mt-lg-5 mt-md-5 mt-2 text-center">
-            Wordpress Websites
-          </h2>
-          <hr />
-          <ProjectEven index={3} />
-        </Col>
-        <Col>
-          <h2 className="resp-h2 mt-lg-5 mt-md-5 mt-2 text-center">Courses</h2>
-          <hr />
-          <Courses />
         </Col>
         <Col>
           <h2 className="resp-h2 mt-lg-5 mt-md-5 mt-2 text-center">

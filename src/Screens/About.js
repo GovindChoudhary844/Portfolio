@@ -40,11 +40,9 @@ const About = () => {
                 color: "var(--third-color)",
               }}
             >
-              Experienced web developer proficient in HTML, CSS, and Bootstrap.
-              Skilled in creating responsive designs with React-Bootstrap and
-              basic knowledge of JavaScript, React.js, Python, Django, and
-              MySQL. Passionate about crafting user-friendly web solutions and
-              eager to contribute to innovative projects.
+              Enthusiastic Unity beginner exploring game development with C#.
+              Learning gameplay mechanics, sound design, and enemy AI.
+              Passionate about building skills and creating engaging games.
             </p>
           </span>
         </Col>

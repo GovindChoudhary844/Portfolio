@@ -153,6 +153,17 @@ function Topmenu() {
                   <Nav className="flex-column">
                     <Nav.Link
                       as={Link}
+                      to="/home"
+                      className="top-navlink-button resp-h5"
+                      onClick={closeMenu}
+                    >
+                      <span>
+                        <i className="fa-light fa-home top-navlink-button-icon"></i>
+                      </span>
+                      Home
+                    </Nav.Link>
+                    <Nav.Link
+                      as={Link}
                       to="/about"
                       className="top-navlink-button resp-h5"
                       onClick={closeMenu}

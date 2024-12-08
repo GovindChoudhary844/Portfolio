@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Row, Col, Nav } from "react-bootstrap";
-import projectDesktopAPI from "../api/projectDesktopAPI";
+import projectsAPI from "../api/projectsAPI";
 import "../../App.css";
 
 function ProjectOdd({ index }) {
-  const project = projectDesktopAPI[index];
+  const project = projectsAPI[index];
   const [ImageLoaded, setImageLoaded] = useState(false);
 
   const handleImageLoad = () => {

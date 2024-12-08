@@ -18,7 +18,6 @@ function ProfileSidebar() {
                 <img
                   src={process.env.PUBLIC_URL + "/Images/photo.jpg"}
                   alt="profile"
-                  width={200}
                   className="profile-image rounded-5"
                 />
               </span>
@@ -148,7 +147,7 @@ function ProfileSidebar() {
                 <Col className="d-flex justify-content-center align-items-center my-3 mb-5">
                   <Button
                     className="bg-green resp-text"
-                    href="https://drive.google.com/file/d/1cDhMVT6BoEVC5TWte3--aeroCGJA9K4H/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1EVGFtSLTleL45bG3PinfHysBduLzD4O0/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     download

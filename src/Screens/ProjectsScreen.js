@@ -3,11 +3,9 @@ import { Row, Col, Button } from "react-bootstrap";
 import Copyright from "../Components/copyright";
 import "../App.css";
 
-import projectDesktopAPI from "../Components/api/projectDesktopAPI";
+import projectsAPI from "../Components/api/projectsAPI";
 
-import ProjectScreenDesktop from "../Components/ProjectScreenComponent/ProjectScreenDesktop";
-import ProjectScreenTablet from "../Components/ProjectScreenComponent/ProjectScreenTablet";
-import ProjectScreenMobile from "../Components/ProjectScreenComponent/ProjectScreenMobile";
+import ProjectScreen from "../Components/ProjectScreenComponent/ProjectScreen";
 
 function ProjectsScreen() {
   const [selectedDevice, setSelectedDevice] = useState("desktop");
@@ -16,7 +14,7 @@ function ProjectsScreen() {
     setSelectedDevice(device);
   };
 
-  const currentProject = projectDesktopAPI[0];
+  const currentProject = projectsAPI[0];
 
   return (
     <>
@@ -40,33 +38,12 @@ function ProjectsScreen() {
         className="rounded-3 p-4 p-md-5 p-lg-5"
         style={{ color: "var(--third-color)" }}
       >
-        <Col>
-          <div className="d-flex">
-            <Button
-              className="bg-green"
-              onClick={() => handleButtonClick("desktop")}
-            >
-              <i className="fa-light fa-desktop"></i>
-            </Button>
-            <Button
-              className="bg-green"
-              onClick={() => handleButtonClick("tablet")}
-            >
-              <i className="fa-light fa-tablet"></i>
-            </Button>
-            <Button
-              className="bg-green"
-              onClick={() => handleButtonClick("mobile")}
-            >
-              <i className="fa-light fa-mobile"></i>
-            </Button>
-          </div>
+        <Col className="d-flex justify-content-center">
+          <h1 className=".resp-h1">Project Description</h1>
         </Col>
         <Row>
           <Col className="my-5">
-            {selectedDevice === "desktop" && <ProjectScreenDesktop />}
-            {selectedDevice === "tablet" && <ProjectScreenTablet />}
-            {selectedDevice === "mobile" && <ProjectScreenMobile />}
+            {selectedDevice === "desktop" && <ProjectScreen />}
           </Col>
         </Row>
         <Row className="mt-5 d-flex">

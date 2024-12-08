@@ -1,6 +1,11 @@
 // App.js
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import "./App.css";
 import { Container, Row, Col } from "react-bootstrap";
 import ProfileSidebar from "./Components/ProfileSidebar";
@@ -18,10 +23,17 @@ import ScrollToTopButton from "./Components/ScrollToTopButton";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [showSidebarOnHome, setShowSidebarOnHome] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   };
+
+  const toggleSidebarVisibility = (isVisible) => {
+    setShowSidebarOnHome(isVisible);
+  };
+
+  const isMobile = window.innerWidth <= 767;
 
   return (
     <>
@@ -30,7 +42,7 @@ function App() {
         .content{
           padding-left: 15px;
           padding-right: 15px;
-          margin-top: 8%;
+          margin-top: 4%;
         }
 
         @media (max-width: 767.98px){
@@ -74,7 +86,14 @@ function App() {
           <ScrollToTop />
           <ScrollToTopButton />
           <Row className="content pb-5">
-            <Col sm={12} md={12} lg={4} xl={4} xxl={3}>
+            <Col
+              sm={12}
+              md={12}
+              lg={4}
+              xl={4}
+              xxl={3}
+              className="d-none d-sm-block"
+            >
               <ProfileSidebar />
             </Col>
             {/* ====================== */}
@@ -88,6 +107,7 @@ function App() {
               style={{ backgroundColor: "var(--primary-color)" }}
             >
               <Routes>
+                <Route path="/home" element={<ProfileSidebar />} />
                 <Route path="/" element={<About />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/resume" element={<Resume />} />

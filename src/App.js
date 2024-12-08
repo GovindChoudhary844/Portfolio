@@ -1,11 +1,5 @@
-// App.js
-import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Container, Row, Col } from "react-bootstrap";
 import ProfileSidebar from "./Components/ProfileSidebar";
@@ -23,56 +17,25 @@ import ScrollToTopButton from "./Components/ScrollToTopButton";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [showSidebarOnHome, setShowSidebarOnHome] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
   const toggleDarkMode = () => {
     setDarkMode((prevDarkMode) => !prevDarkMode);
   };
 
-  const toggleSidebarVisibility = (isVisible) => {
-    setShowSidebarOnHome(isVisible);
-  };
-
-  const isMobile = window.innerWidth <= 767;
+  // Update `isMobile` on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
-      <style>
-        {`
-        .content{
-          padding-left: 15px;
-          padding-right: 15px;
-          margin-top: 4%;
-        }
-
-        @media (max-width: 767.98px){
-          .content{
-            padding-left: 0;
-            padding-right: 0;
-            margin-top: 160px;
-          }
-        }
-
-        @media (min-width: 768px) and (max-width: 991.98px){
-          .content{
-            padding-left: 10%;
-            padding-right: 10%;
-          }
-          .pages{
-            margin-top: 2em !important;
-          }
-          .content{
-            margin-top: 160px;
-          }
-        }
-        
-        @media (min-width: 991.98px) and (max-width: 1399px) {
-          .content{
-            margin-top: 225px;
-          }
-        } 
-      `}
-      </style>
       <Router>
         <Container
           fluid
@@ -107,8 +70,11 @@ function App() {
               style={{ backgroundColor: "var(--primary-color)" }}
             >
               <Routes>
-                <Route path="/home" element={<ProfileSidebar />} />
-                <Route path="/" element={<About />} />
+                {/* Conditionally render the default route based on screen size */}
+                <Route
+                  path="/"
+                  element={isMobile ? <ProfileSidebar /> : <About />}
+                />
                 <Route path="/about" element={<About />} />
                 <Route path="/resume" element={<Resume />} />
                 <Route path="/works" element={<Works />} />
@@ -116,8 +82,7 @@ function App() {
                 <Route
                   path="/projects/:projectId"
                   element={<ProjectsScreen />}
-                />{" "}
-                {/* Use ProjectsScreen component here */}
+                />
               </Routes>
             </Col>
             {/* ====================== */}

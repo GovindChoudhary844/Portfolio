@@ -153,7 +153,7 @@ function Topmenu() {
                   <Nav className="flex-column">
                     <Nav.Link
                       as={Link}
-                      to="/home"
+                      to="/"
                       className="top-navlink-button resp-h5"
                       onClick={closeMenu}
                     >

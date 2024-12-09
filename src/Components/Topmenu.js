@@ -7,7 +7,7 @@ import ModeButton from "../Components/ModeButton";
 
 function Topmenu() {
   const [menuVisible, setMenuVisible] = useState(false);
-  const [setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef(null);
 
   useEffect(() => {

@@ -125,11 +125,11 @@ hr {
   margin-top: 4%;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 767.99px) {
   .content {
     padding-left: 0;
     padding-right: 0;
-    margin-top: 160px;
+    margin-top: 25%;
   }
 }
 
@@ -137,6 +137,7 @@ hr {
   .content {
     padding-left: 10%;
     padding-right: 10%;
+    margin-top: 25%;
   }
 
   .pages {
@@ -150,6 +151,6 @@ hr {
 
 @media (min-width: 991.98px) and (max-width: 1399px) {
   .content {
-    margin-top: 225px;
+    margin-top: 15%;
   }
 }

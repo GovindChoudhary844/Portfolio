@@ -69,11 +69,11 @@ const Resume = () => {
           <Education />
           <hr />
         </Col>
-        <Row className="align-items-center justify-content-center">
-          <Col className="text-center">
+        <Row>
+          <Col className="d-flex justify-content-center align-items-center my-3 mb-5">
             <Button
               className="bg-green resp-text"
-              href="https://drive.google.com/file/d/1cDhMVT6BoEVC5TWte3--aeroCGJA9K4H/view?usp=sharing"
+              href="https://drive.google.com/file/d/1EVGFtSLTleL45bG3PinfHysBduLzD4O0/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               download

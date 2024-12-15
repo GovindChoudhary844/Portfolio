@@ -5,9 +5,15 @@ import projectsAPI from "../api/projectsAPI";
 import "../../App.css";
 
 function ProjectOdd({ index }) {
-  const project = projectsAPI[index];
   const [imageLoaded, setImageLoaded] = useState(false);
   const navigate = useNavigate();
+
+  const project = projectsAPI[index];
+
+  // Guard clause to handle undefined project
+  if (!project) {
+    return <div>Error: Project data not found.</div>;
+  }
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -87,6 +93,7 @@ function ProjectOdd({ index }) {
             <i className="fa fa-play-circle play-icon" aria-hidden="true"></i>
           </div>
         </Col>
+        <hr className="hr-small my-lg-3" />
       </Row>
     </div>
   );

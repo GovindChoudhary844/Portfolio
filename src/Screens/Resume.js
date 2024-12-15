@@ -2,6 +2,7 @@
 import React from "react";
 import { Col, Row, Button } from "react-bootstrap";
 import Skills from "../Components/Skills";
+import projects from "../Components/api/projectsAPI";
 import ProjectOdd from "../Components/Projects/ProjectOdd";
 import ProjectEven from "../Components/Projects/ProjectEven";
 import Education from "../Components/Education";
@@ -9,6 +10,14 @@ import Copyright from "../Components/copyright";
 import "../App.css";
 
 const Resume = () => {
+  // Function to render the correct project component
+  const renderProjects = () => {
+    return projects.map((project, index) => {
+      const ProjectComponent = index % 2 === 0 ? ProjectOdd : ProjectEven;
+      return <ProjectComponent key={project.id} index={index} />;
+    });
+  };
+
   return (
     <>
       <style>
@@ -58,8 +67,7 @@ const Resume = () => {
         <Col>
           <h2 className="resp-h2 mt-lg-5 mt-md-5 mt-2 text-center">Projects</h2>
           <hr />
-          <ProjectOdd index={0} />
-          <hr className="hr-small" />
+          {renderProjects()} {/* Call the render function */}
         </Col>
         <Col>
           <h2 className="resp-h2 mt-lg-5 mt-md-5 mt-2 text-center">

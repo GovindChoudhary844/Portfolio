@@ -76,7 +76,7 @@ function ProjectScreen() {
     <>
       <style>
         {`
-          .Desktop-bg {
+          .Game-Col {
             background-image: url('Images/Projects/Project 1/Desktop.jpg');
             background-size: cover; 
             background-position: center;
@@ -115,7 +115,7 @@ function ProjectScreen() {
         </Col>
       </Row>
       <Row className="mt-3">
-        <Col md={12} className="Desktop-bg">
+        <Col md={12} className="Game-Col">
           <div
             className="video-container rounded-3"
             style={{
@@ -141,9 +141,6 @@ function ProjectScreen() {
               allowFullScreen="true"
             />
           </div>
-          {/* <Button onClick={handleFullscreen} className="mt-3" variant="primary">
-            Fullscreen
-          </Button> */}
         </Col>
 
         <Col md={12} className="d-flex align-items-center mt-3">

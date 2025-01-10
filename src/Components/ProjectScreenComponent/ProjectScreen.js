@@ -144,7 +144,7 @@ function ProjectScreen() {
         </Col>
 
         <Col md={12} className="d-flex align-items-center mt-3">
-          <p className="resp-text">
+          <p className="resp-text mx-xl-5">
             {project ? project.description : "Project Not Found"}
           </p>
         </Col>
